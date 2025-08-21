@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Her Phone Lights Up and She Instantly Smiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(220, 38, 127, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(220, 38, 127, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .message-bubble {
+            position: absolute;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: text-popup 8s ease-in-out infinite;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .message-bubble.sent {
+            background: linear-gradient(135deg, #dc267f, #be185d);
+            color: white;
+            border-radius: 20px 20px 5px 20px;
+        }
+        
+        .message-bubble.received {
+            background: #f8f9fa;
+            color: #1a1a1a;
+            border-radius: 20px 20px 20px 5px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .message-bubble:nth-child(1) { 
+            top: 15%; 
+            left: 8%; 
+            animation-delay: 0s; 
+        }
+        .message-bubble:nth-child(2) { 
+            top: 25%; 
+            right: 12%; 
+            animation-delay: 1.5s; 
+        }
+        .message-bubble:nth-child(3) { 
+            bottom: 35%; 
+            left: 15%; 
+            animation-delay: 3s; 
+        }
+        .message-bubble:nth-child(4) { 
+            bottom: 20%; 
+            right: 20%; 
+            animation-delay: 4.5s; 
+        }
+        .message-bubble:nth-child(5) { 
+            top: 60%; 
+            left: 5%; 
+            animation-delay: 6s; 
+        }
+        .message-bubble:nth-child(6) { 
+            top: 45%; 
+            right: 8%; 
+            animation-delay: 7.5s; 
+        }
+        
+        @keyframes text-popup {
+            0%, 90%, 100% { 
+                opacity: 0; 
+                transform: translateY(20px) scale(0.8); 
+            }
+            10%, 80% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+        }
+        
+        .hero-text h1 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 30%, #dc267f 70%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 0 30px rgba(220, 38, 127, 0.2);
+        }
+        
+        .hero-text .highlight {
+            background: linear-gradient(135deg, #dc267f 0%, #be185d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .hero-text .hook {
+            font-size: 1.6rem;
+            color: #dc267f;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .hero-text .subheading {
+            font-size: 1.4rem;
+            color: #e9ecef;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .psychology-preview {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            border: 2px solid #dc267f;
+            border-left: 6px solid #dc267f;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(220, 38, 127, 0.1);
+        }
+        
+        .psychology-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 25%, rgba(220, 38, 127, 0.02) 25%, rgba(220, 38, 127, 0.02) 50%, transparent 50%, transparent 75%, rgba(220, 38, 127, 0.02) 75%);
+            background-size: 15px 15px;
+            pointer-events: none;
+        }
+        
+        .psychology-preview h3 {
+            color: #dc267f;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(220, 38, 127, 0.3);
+        }
+        
+        .psychology-preview ul {
+            list-style: none;
+            color: #1a1a1a;
+        }
+        
+        .psychology-preview li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .psychology-preview li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .phone-conversation {
+            width: 320px;
+            height: 600px;
+            background: linear-gradient(145deg, #1f2937, #111827);
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-conversation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 25%, rgba(147, 51, 234, 0.05) 25%, rgba(147, 51, 234, 0.05) 50%, transparent 50%, transparent 75%, rgba(147, 51, 234, 0.05) 75%);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+        
+        .chat-screen {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 25px;
+            padding: 20px 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .message {
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 8px;
+            max-width: 80%;
+            font-size: 0.9rem;
+            animation: message-appear 0.8s ease-out;
+        }
+        
+        .message.you {
+            background: #9333ea;
+            color: white;
+            border-radius: 18px 18px 5px 18px;
+            margin-left: auto;
+        }
+        
+        .message.her {
+            background: #374151;
+            color: #ccc;
+            border-radius: 18px 18px 18px 5px;
+            margin-right: auto;
+        }
+        
+        .message.special {
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+            animation: special-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes message-appear {
+            from { opacity: 0; transform: translateY(20px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes special-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(236, 72, 153, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.7); }
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            animation: typing-pulse 2s ease-in-out infinite;
+        }
+        
+        .dots {
+            display: inline-flex;
+            margin-left: 10px;
+        }
+        
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #666;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: dot-pulse 1.5s infinite;
+        }
+        
+        .dot:nth-child(2) { animation-delay: 0.3s; }
+        .dot:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes dot-pulse {
+            0%, 60%, 100% { opacity: 0.3; }
+            30% { opacity: 1; }
+        }
+        
+        @keyframes typing-pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .magic-quote {
+            background: linear-gradient(135deg, #1f2937 0%, #9333ea 50%, #ec4899 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-style: italic;
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .problem-section {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+            padding: 100px 0;
+            color: white;
+            position: relative;
+        }
+        
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 5 L35 35 L5 35 Z" fill="rgba(147,51,234,0.03)" stroke="rgba(147,51,234,0.08)" stroke-width="0.5"/></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        .problem-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .problem-header h2 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #9333ea 0%, #ffffff 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(145deg, rgba(31, 41, 55, 0.8), rgba(0, 0, 0, 0.9));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(147, 51, 234, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .problem-card:hover::before {
+            left: 100%;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            border-color: #9333ea;
+        }
+        
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #9333ea;
+        }
+        
+        .features-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1f2937 25%, #374151 50%, #1f2937 75%, #0a0a0a 100%);
+            padding: 100px 0;
+            color: white;
+            position: relative;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .features-header h2 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #ffffff 0%, #9333ea 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, rgba(31, 41, 55, 0.8), rgba(0, 0, 0, 0.9));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(147, 51, 234, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: #9333ea;
+            box-shadow: 0 25px 50px rgba(147, 51, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.3));
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #9333ea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-card p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: rgba(147, 51, 234, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #9333ea;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #9333ea;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1f2937 0%, #9333ea 30%, #ec4899 70%, #1f2937 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.08)"/><circle cx="15" cy="15" r="1" fill="rgba(147,51,234,0.06)"/><circle cx="45" cy="45" r="1" fill="rgba(236,72,153,0.06)"/></svg>') repeat;
+            animation: float-pattern 25s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float-pattern {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-60px) translateY(-60px); }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        
+        .cta-section .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 50px;
+            font-weight: 400;
+            text-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .price {
+            font-size: 4rem;
+            color: white;
+            font-weight: 900;
+            margin: 40px 0;
+            text-shadow: 0 0 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .price::before {
+            content: 'Only';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            color: #0a0a0a;
+            padding: 25px 60px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .early-cta-button {
+            display: inline-block;
+            background: linear-gradient(145deg, #dc267f, #be185d);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(220, 38, 127, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .early-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .early-cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .early-cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(220, 38, 127, 0.4);
+            background: linear-gradient(145deg, #be185d, #dc267f);
+        }
+        
+        .buy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(147,51,234,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .buy-button:hover::before {
+            left: 100%;
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+            background: linear-gradient(145deg, #f8fafc, #ffffff);
+        }
+        
+        .urgency-section {
+            background: linear-gradient(135deg, #111827 0%, #000000 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .urgency-section h2 {
+            font-size: 2.4rem;
+            color: #9333ea;
+            margin-bottom: 25px;
+        }
+        
+        .urgency-text {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .final-cta {
+            background: linear-gradient(145deg, #9333ea, #ec4899);
+            color: white;
+            padding: 25px 70px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 60px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 50px rgba(147, 51, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .final-cta:hover::before {
+            left: 100%;
+        }
+        
+        .final-cta:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 0 60px rgba(147, 51, 234, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .phone-conversation {
+                width: 280px;
+                height: 500px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="message-bubble sent">😉</div>
+            <div class="message-bubble received">Haha stop</div>
+            <div class="message-bubble sent">Miss you</div>
+            <div class="message-bubble received">😊</div>
+            <div class="message-bubble sent">Hey you</div>
+            <div class="message-bubble received">❤️</div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Why Her Phone Lights Up and She <span class="highlight">Instantly Smiles</span></h1>
+                    <p class="hook">"It's not what you say... it's how you make her feel"</p>
+                    <p class="subheading">Learn the secret psychology that makes your texts irresistible and keeps her craving more</p>
+                    
+                    <div class="psychology-preview">
+                        <h3>The Text Psychology That Changes Everything:</h3>
+                        <ul>
+                            <li><strong>Creates anticipation</strong> that makes her excited to hear from you</li>
+                            <li><strong>Builds attraction</strong> between dates and keeps things warm</li>
+                            <li><strong>Makes you memorable</strong> when other guys are boring and predictable</li>
+                            <li><strong>Triggers emotional responses</strong> that create deeper connection</li>
+                            <li><strong>Keeps her guessing</strong> what you'll say next in the best way</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="magic-quote">
+                        "When you master this, she starts looking forward to your messages more than anyone else's"
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://buy.stripe.com/9B68wI1DM8D02LUf7o6Vq0i" class="early-cta-button" target="_blank">Get This For Only $29</a>
+                        <p style="margin-top: 15px; color: rgba(233, 236, 239, 0.8); font-size: 0.9rem;">✓ Instant Download • ✓ 30-Day Guarantee</p>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="phone-conversation">
+                        <div class="chat-screen">
+                            <div class="message you">Can you stop?</div>
+                            <div class="message her">Stop what? 🤔</div>
+                            <div class="message you special">Being on my mind</div>
+                            <div class="message her">😏 You're so bad</div>
+                            <div class="typing-indicator">
+                                She's typing...
+                                <div class="dots">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-header">
+                <h2>Most Guys Text Like This...</h2>
+                <p style="font-size: 1.3rem; color: #cbd5e1;">And wonder why their messages get ignored</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😴</div>
+                    <h3>Boring Conversations</h3>
+                    <p>"How was your day?" "What are you up to?" Same predictable questions that put her to sleep.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">📱</div>
+                    <h3>One-Word Responses</h3>
+                    <p>She replies with "Good" or "Cool" because you're not giving her anything exciting to work with.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Dead Air Between Dates</h3>
+                    <p>Attraction fizzles out because you don't know how to keep the spark alive through text.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🤷‍♂️</div>
+                    <h3>Never Standing Out</h3>
+                    <p>Your texts blend in with every other guy messaging her. Nothing memorable or magnetic.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">💔</div>
+                    <h3>Missed Opportunities</h3>
+                    <p>She was interested, but your weak texting game killed the vibe before you even got started.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>Overthinking Every Message</h3>
+                    <p>Spending 20 minutes crafting the "perfect" text, only to get left on read anyway.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header">
+                <h2>What You'll Master Inside</h2>
+                <p style="font-size: 1.3rem; color: #cbd5e1;">The complete psychology of irresistible texting</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>The Psychology Behind Her Responses</h3>
+                    <p>Understand exactly what makes her want to text back immediately vs. what makes her lose interest. The hidden triggers that create anticipation and excitement.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Conversation Spark Techniques</h3>
+                    <p>Never run out of things to say again. Learn the frameworks that keep conversations flowing naturally and build deeper connection through text.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Timing & Frequency Mastery</h3>
+                    <p>When to text, when to wait, and how often to message without seeming needy or desperate. The rhythm that keeps her engaged.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🔥</span>
+                    <h3>Flirty Text Templates</h3>
+                    <p>Copy-paste messages that create butterflies and make her smile every time. From playful banter to building sexual tension.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💎</span>
+                    <h3>The Emotional Rollercoaster</h3>
+                    <p>How to create highs and lows that keep her hooked and thinking about you between messages. The addictive texting pattern.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎭</span>
+                    <h3>Personality Through Text</h3>
+                    <p>Let your charisma shine through every message. How to be funny, mysterious, and magnetic without trying too hard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #9333ea 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Real Results From Real Guys</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1;">See what happens when you master the psychology</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"Dude, this actually works. I went from getting one-word responses to having girls texting me first. My dating life completely changed."</div>
+                    <div class="testimonial-author">- Marcus, 28</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"I used to overthink every text for hours. Now I know exactly what to say and when to say it. She actually said I'm the most interesting guy she's texted."</div>
+                    <div class="testimonial-author">- Jake, 25</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"The psychology behind this is insane. I'm getting responses I never thought possible. My confidence through text is through the roof now."</div>
+                    <div class="testimonial-author">- David, 31</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transform Your Texting Game Today</h2>
+                <p class="subtitle">Stop being another boring guy in her phone</p>
+                <div class="price">$29</div>
+                <a href="https://buy.stripe.com/9B68wI1DM8D02LUf7o6Vq0i" class="buy-button" target="_blank">Get Instant Access</a>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.8); font-size: 1rem;">Instant download • 30-day money-back guarantee</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="urgency-section">
+        <div class="container">
+            <h2>Don't Let Another Day Go By</h2>
+            <p class="urgency-text">Every day you wait is another day of missed connections and boring conversations. While you're overthinking your next text, other guys are using these techniques to become irresistible.</p>
+            <a href="https://buy.stripe.com/9B68wI1DM8D02LUf7o6Vq0i" class="final-cta" target="_blank">Start Attracting Her Through Text</a>
+            <p style="margin-top: 30px; color: #9333ea; font-size: 1.1rem;">⚡ Instant access after purchase</p>
+        </div>
+    </section>
+    
+    <footer style="background: #000; padding: 40px 0; text-align: center; color: #666;">
+        <div class="container">
+            <p>&copy; 2025 Text Attraction Mastery. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Transform your dating life through the power of psychology</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Add some interactive sparkle to floating messages
+        document.addEventListener('DOMContentLoaded', function() {
+            const bubbles = document.querySelectorAll('.message-bubble');
+            bubbles.forEach((bubble, index) => {
+                bubble.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) translateY(-5px)';
+                    this.style.boxShadow = '0 8px 25px rgba(220, 38, 127, 0.4)';
+                });
+                
+                bubble.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) translateY(0)';
+                    this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+                });
+            });
+            
+            // Add click tracking for buttons
+            const buttons = document.querySelectorAll('.buy-button, .final-cta, .early-cta-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // You can add analytics tracking here
+                    console.log('Purchase button clicked');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+                
